@@ -10,6 +10,11 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
+
+app.get("/api/health", (_req, res) => {
+  res.status(200).json({ ok: true, service: "books-api" });
+});
+
 app.use("/api/book", book);
 
 app.listen(process.env.PORT, () =>

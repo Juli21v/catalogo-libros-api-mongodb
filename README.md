@@ -11,10 +11,18 @@ Backend **Node.js + Express + MongoDB (Mongoose)** para registrar y consultar **
 - Mongoose
 - dotenv, CORS
 
-## API
+## API REST (`/api/book`)
 
-- Prefijo sugerido: `/api/book`
-- Operaciones típicas: crear, leer, actualizar y eliminar registros de libros (según rutas en `backend/routes/Book.js`)
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| GET | `/api/health` | Estado del servicio |
+| GET | `/api/book` | Lista libros activos (`?all/true` incluye archivados) |
+| GET | `/api/book/:id` | Detalle por id de MongoDB |
+| POST | `/api/book` | Crear (`name`, `description`) |
+| PUT | `/api/book/:id` | Actualizar campos parciales |
+| DELETE | `/api/book/:id` | Archivar (soft delete: `dbStatus: false`) |
+
+Ejemplos en `backend/api-requests.http` (REST Client / VS Code).
 
 ## Estructura del repositorio
 

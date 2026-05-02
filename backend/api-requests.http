@@ -1,0 +1,28 @@
+### Health
+GET http://localhost:3000/api/health
+
+### List books (solo activos; ?all=true para incluir archivados)
+GET http://localhost:3000/api/book
+
+### Libro por id (sustituye ID)
+GET http://localhost:3000/api/book/REPLACE_OBJECT_ID
+
+### Crear libro
+POST http://localhost:3000/api/book
+Content-Type: application/json
+
+{
+  "name": "Clean Code",
+  "description": "Robert C. Martin — buenas prácticas de software."
+}
+
+### Actualizar libro
+PUT http://localhost:3000/api/book/REPLACE_OBJECT_ID
+Content-Type: application/json
+
+{
+  "description": "Descripción actualizada"
+}
+
+### Archivar (soft delete)
+DELETE http://localhost:3000/api/book/REPLACE_OBJECT_ID
